@@ -8,7 +8,8 @@ if($submit)
 {
   if($name&&$comment)
   {
-    $insert=mysql_query("INSERT INTO comment (name,comment) VALUES ('$name','$comment')");
+   $insert=mysql_query("INSERT INTO comment (name,comment) VALUES ('$name','$comment')");
+   header("Location: repeat.php");
   }
   else
   {
@@ -32,5 +33,19 @@ if($submit)
 <tr><td colspan="2"><input type="submit" name="submit" value="Comment" /></td></tr>
 </table>
 </form>
+<?php
+$getquery=mysql_query("SELECT * FROM comment ORDER BY id DESC")
+while($rows=mysql_fetch_assoc($getquery))
+{
+  $id=$rows['id'];
+  $name=$rows['name'];
+  $comment=$rows['comment'];
+  $dellink="<a href=\"delete.php?Id=" . $id . "\"> Delete </a>";
+  echo $name . '<br />' . '<br />' . $comment . '<br />' . $dellink . '<br />' . '<hr width="250px" />';
+}
+
+
+
+?>
 </body>
 </html>
