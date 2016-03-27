@@ -1,6 +1,6 @@
 <?php
 require('connect.php');
-$deleteid=$_GET['id'];
-mysql_query("DELETE FROM comment WHERE id='$deleteid']'");
-header("location: index.php")
+$did=$_GET['id'];
+mysql_query("DELETE FROM comments WHERE id='$did']");
+header("location: index.php");
 ?>

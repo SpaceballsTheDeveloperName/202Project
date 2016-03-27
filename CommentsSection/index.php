@@ -8,8 +8,8 @@ if($submit)
 {
   if($name&&$comment)
   {
-   $insert=mysql_query("INSERT INTO comment (name,comment) VALUES ('$name','$comment')");
-   header("Location: repeat.php");
+   $insert=mysql_query("INSERT INTO comments (name,comment) VALUES ('$name','$comment')");
+   
   }
   else
   {
@@ -34,13 +34,13 @@ if($submit)
 </table>
 </form>
 <?php
-$getquery=mysql_query("SELECT * FROM comment ORDER BY id DESC")
+$getquery=mysql_query("SELECT * FROM comments ORDER BY id DESC");
 while($rows=mysql_fetch_assoc($getquery))
 {
   $id=$rows['id'];
   $name=$rows['name'];
   $comment=$rows['comment'];
-  $dellink="<a href=\"delete.php?Id=" . $id . "\"> Delete </a>";
+  $dellink="<a href=\"delete.php?id=" . $id . "\"> Delete </a>";
   echo $name . '<br />' . '<br />' . $comment . '<br />' . $dellink . '<br />' . '<hr width="250px" />';
 }
 
