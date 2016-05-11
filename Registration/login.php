@@ -1,16 +1,37 @@
 <html>
 <head>
 <title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/SiteCSS/myStyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+
+function validateForm() {
+  var x = document.forms["myForm"]["user"].value;
+  var y = document.forms["myForm"]["pass"].value;
+  if (x == null || x == "") {
+    alert("All fields must be filled.");
+    }
+  if (y == null || y == ""){
+    alert("All fields must be filled.");
+    return false; }
+    }
+</script>    
 </head>
 <body>
 
+<div class="container">
 <p><a href="register.php">Register</a> | <a href="login.php">Login</a></p>
 <h3>Login Form</h3>
-<form action="" method="POST">
+
+<form name="myForm" action="" onsubmit="return validateForm()" method="POST">
 Username: <input type="text" name="user"><br />
 Password: <input type="password" name="pass"><br />
 <input type="submit" value="Login" name="submit" />
 </form>
+
 <?php
 if(isset($_POST["submit"]))
 {
@@ -31,7 +52,7 @@ if(isset($_POST["submit"]))
       {
 	session_start();
 	$_SESSION['sess_user']=$user;
-	header("Location: member.php");
+	header("Location:/SiteCSS/mySite.html");
       }
   }
   else
@@ -40,5 +61,6 @@ if(isset($_POST["submit"]))
   }
 }
 ?>
+</div>
 </body>
 </html>

@@ -43,9 +43,6 @@ while($rows=mysql_fetch_assoc($getquery))
   $dellink="<a href=\"delete.php?id=" . $id . "\"> Delete </a>";
   echo $name . '<br />' . '<br />' . $comment . '<br />' . $dellink . '<br />' . '<hr width="250px" />';
 }
-
-
-
 ?>
 </body>
 </html>

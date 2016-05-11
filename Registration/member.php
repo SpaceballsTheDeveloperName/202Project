@@ -10,11 +10,12 @@ else
 <html>
 <head>
 <title>Welcome</title>
+<link rel="stylesheet" href="/SiteCSS/myStyle.css">
 </head>
 <body>
-<h2>Welcome, <?=$_SESSION['sess_user'];?>! <a href="logout.php">Logout</a></h2>
+<h2>Thank You, <?=$_SESSION['sess_user'];?>! <a href="logout.php">Logout</a></h2>
 <p>
-I should probably write something here to test it.
+You have successfully logged out.
 </p>
 </body>
 </html>

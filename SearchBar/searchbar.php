@@ -25,7 +25,7 @@
     }
     else
     {
-      echo "<p>Please enter search query</p>";
+      echo "<p>Please enter search terms</p>";
     }
     }
     ?>
